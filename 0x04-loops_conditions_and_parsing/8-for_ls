@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# a Bash script that displays:
+# The content of the current directory
+# In a list format
+# Where only the part of the name after the first dash is displayed
+
+for content in *
+    do
+        if [ -e "$content" ] && [ ! -d "$content" ] && [ ! -f "$content" ] && [ ! -L "$content" ] && [ "$content" != "*" ]; then
+            continue
+        fi
+        name_after_dash=$(echo "$content" | cut -d "-" -f 2)
+        echo "$name_after_dash"
+    done
