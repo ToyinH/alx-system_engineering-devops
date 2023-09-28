@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script is displaying Best School 10 times
+# but for the 9th iteration, displays Best School
+# and then Hi on a new line
+string="Best School"
+num=1
+while [ $num -le 10 ]
+do
+    echo "$string"
+    if [ $num == 9 ]; then
+        echo "Hi"
+    fi
+	((num++))
+done
