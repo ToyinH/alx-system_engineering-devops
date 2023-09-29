@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Bash script that displays lines containing the bash word
+# Bash script that displays lines containing the bash word. pgrep is not allowed
 # shellcheck disable=SC2009
 ps aux --forest | grep bash
