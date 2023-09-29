@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that displays its own PID
+# for parent id use echo $PPID. note that it is in capital letters
+echo $$
