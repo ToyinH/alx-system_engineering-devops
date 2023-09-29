@@ -4,4 +4,4 @@
 # display in a user oriented format
 # show process hierachy
 
-ps -eo pid,ppid,tty,cmd
+ps -eHf
