@@ -4,4 +4,4 @@
 # display in a user oriented format
 # show process hierachy
 
-ps -eH --forest
+ps -eHF --forest
