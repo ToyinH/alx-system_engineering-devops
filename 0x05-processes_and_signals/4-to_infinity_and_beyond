@@ -3,4 +3,5 @@ num=0
 while [ $num -lt 10 ]
 do
     echo "To infinity and beyond"
+    sleep 2
 done
