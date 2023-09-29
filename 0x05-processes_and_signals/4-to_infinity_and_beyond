@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+num=0
+while [ $num -lt 10 ]
+do
+    echo "To infinity and beyond"
+done
