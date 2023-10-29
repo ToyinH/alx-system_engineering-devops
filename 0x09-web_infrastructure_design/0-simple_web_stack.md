@@ -8,7 +8,7 @@ Attached is an image of a whiteboard to design a one server web infrastructure t
 Components:
 ===========
 
-1. Server: The server is a physical or virtual machine responsible for hosting the entire web infrastructure. In this case, it is a single server.
+Server: The server is a physical or virtual machine responsible for hosting the entire web infrastructure. In this case, it is a single server.
 
 Web Server (Nginx): Nginx is responsible for handling HTTP requests and serving static content. It listens for incoming requests and forwards them to the application server when dynamic content is required.
 
