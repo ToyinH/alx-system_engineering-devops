@@ -1,4 +1,3 @@
-#!/usr/bin/pup
 # Install a package using puppet
 
 package {
