@@ -17,4 +17,14 @@ This is a project to start creating a configuration management system using pupp
 - Your Puppet manifests first line must be a comment explaining what the Puppet manifest is about
 - Your Puppet manifests files must end with the extension .pp
 
+## Installations
+- Install puppet
+
+```
+$ apt-get install -y ruby=1:2.7+1 --allow-downgrades
+$ apt-get install -y ruby-augeas
+$ apt-get install -y ruby-shadow
+$ apt-get install -y puppet
+```
+
 
