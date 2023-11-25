@@ -1,5 +1,10 @@
 # 0x0A. Configuration Management
 
-<br>
+This is a project to start creating a configuration management system using puppet
 
-name 
+## Content
+
+- [Resources](#resources)
+- [Requirements](#requirements)
+- [Installations](#installations)
+- [Tasks](#tasks)
