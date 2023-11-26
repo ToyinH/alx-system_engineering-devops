@@ -4,3 +4,4 @@ Host server01
     Port 22
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
+    ChallengeResponseAuthentication no
