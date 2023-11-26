@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A bash script that uses ssh to connet to your server
+
+server_ip="34.224.63.18"
+user="ubuntu"
+port="22"
+private_key="~/.ssh/id_rsa"
+
+ssh -i "$private_key" "$user"@"$server_ip"
