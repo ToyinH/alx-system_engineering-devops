@@ -1,21 +1,13 @@
-#!/usr/bin/env bash
-# without password, use puppet to connect
+# configure configuration file using puppet
 
-file {
-  '/etc/ssh/ssh_config':
-    ensure => present,
-}
+$file_path = '/etc/ssh/ssh_config'
 
-file_line {
-  'Turn off Password authentication':
-    path => '/etc/ssh/ssh_config',
-    line => 'PasswordAuthentication no',
-    match => '^#PasswordAuthentication',
-}
-
-file_line {
-  'identity file':
-    path => '/etc/ssh/ssh_config',
-    line => 'IdentityFile ~/.ssh/school',
-    match => '^#IdentityFile',
+file { $file_path:
+  ensure  => 'present',
+  content => "
+	# SSH client configuration
+	host*
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
+	"
 }
