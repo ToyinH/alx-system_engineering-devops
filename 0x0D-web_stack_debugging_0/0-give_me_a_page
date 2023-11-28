@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#webstack debugging
-service apache2 restart
-
