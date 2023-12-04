@@ -11,7 +11,7 @@ echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404_page.html
 
 repl_str="server_name _;\n\n\terror_page 404 \/custom_404_page.html;\n\tlocation = \/custom_404_page.html {\n\t\t root \/var\/www\/html;\n\t\tinternal;\n\t}"
 
-sed -i "s/server_name _;/$repl_str/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/server_name _;/$repl_str/" /etc/nginx/sites-enabled/default
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
