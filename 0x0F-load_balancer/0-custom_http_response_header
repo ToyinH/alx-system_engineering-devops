@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 # Configure http headere
+sudo apt-get update
 
+sudo apt-get install -y nginx
 
-repl_str="server_name _;\n\n\t# Add a custom header \n\n\tadd_header X-Served-By \$hostname;\n"
+sudo ufw allow 'Nginx HTTP'
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404_page.html
+
+repl_str="server_name _;\n\n\terror_page 404 \/custom_404_page.html;\n\tlocation = \/custom_404_page.html {\n\t\t root \/var\/www\/html;\n\t\tinternal;\n\t}"
 
 sudo sed -i "s/server_name _;/$repl_str/" /etc/nginx/sites-enabled/default
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+replace_str="server_name _;\n\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.google.com;\n\t}"
+
+sudo sed -i "s/server_name _;/$replace_str/" /etc/nginx/sites-enabled/default
+
+
+repla_str="server_name _;\n\n\t# Add a custom header \n\n\tadd_header X-Served-By \$hostname;\n"
+
+sudo sed -i "s/server_name _;/$repla_str/" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
 
