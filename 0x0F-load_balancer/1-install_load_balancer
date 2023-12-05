@@ -10,7 +10,7 @@ sudo apt-get install -y haproxy=2.8.\*
 
 sudo service haproxy start
 
-multiline_text=$(cat <<EOF
+multiline_text=$(cat <<EOF | sudo tee -a /etc/haproxy/haproxy.cfg
 
 frontend web_frontend
 	bind *:80
@@ -25,7 +25,7 @@ backend web_servers
 EOF
 )
 
-echo "$multiline_text" | sudo tee -a /etc/haproxy/haproxy.cfg
+# echo "$multiline_text" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
 
