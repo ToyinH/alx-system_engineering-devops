@@ -3,28 +3,14 @@
 
 # Check if the correct number of arguments is provided
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <mysql_root_password>"
-    exit 1
+	echo "Usage: $0 <mysql_root_password>"
+	exit 1
 fi
 
-# Set the MySQL root password
-mysql_root_password="$1"
-
-# Get the current date in the required format
-current_date=$(date +"%d-%m-%Y")
-
-# Set the backup file names
-dump_file="backup.sql"
-archive_file="${current_date}.tar.gz"
 
 # MySQL dump command
-mysqldump -u root -p"${mysql_root_password}" --all-databases > "${dump_file}"
+mysqldump -u root -p"$1" --all-databases > backup.sql
 
 # Create a compressed tar archive
-tar -czf "${archive_file}" "${dump_file}"
-
-# Clean up - remove the original dump file
-rm "${dump_file}"
-
-echo "Backup completed successfully. Archive: ${archive_file}"
-
+tar -czf "$(date +%d-%m-%Y)".tar.gz backup.sql
+i
