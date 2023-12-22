@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# web stack debugging for nginx
+sudo rm /etc/nginx/sites-enabled/default
+
+# configure to listen at port 80
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+service nginx restart
