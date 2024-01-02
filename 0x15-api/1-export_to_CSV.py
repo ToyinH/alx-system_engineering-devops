@@ -33,9 +33,12 @@ def fetch_data(user_id):
     filename = f"{user_id}" + ".csv"
 
     with open(filename, "w", newline="") as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in todo_list:
-            writer.writerow([user_id, username, task["completed"], task["title"]])
+            writer.writerow(
+                [user_id, username, task["completed"], task["title"]]
+                )
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
