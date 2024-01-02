@@ -38,14 +38,12 @@ def fetch_data(user_id):
     number_of_done_task = count
     total_number_of_task = len(todo_list)
 
-    # print(f"Employee {employee_name} is done with tasks({number_of_done_task}/{total_number_of_task}):")
-
     print("Employee {} is done with tasks({}/{}):"
           .format(employee_name, number_of_done_task, total_number_of_task))
 
     for task in todo_list:
         if task["completed"] is True:
-            print("\t{}".format(task["title"]))
+            print("\t {}".format(task["title"]))
 
 
 if __name__ == "__main__":
