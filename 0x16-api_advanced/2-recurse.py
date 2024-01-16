@@ -5,12 +5,15 @@ the list of hot articles using recursion"""
 
 import requests
 
+
 def recurse(subreddit, hot_list=None, after=None):
     if hot_list is None:
         hot_list = []
 
     # Base case: check if the subreddit is valid
-    response = requests.get(f'https://www.reddit.com/r/{subreddit}/hot.json', params={'after': after}, headers={'User-agent': 'sample_app'})
+    headers = {'User-agent': 'sample_app'}
+    endpoint = f'https://www.reddit.com/r/{subreddit}/hot.json'
+    response = requests.get(endpoint, params={'after': after}, headers=headers)
     if response.status_code != 200:
         return None
 
