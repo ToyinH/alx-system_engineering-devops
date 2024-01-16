@@ -3,7 +3,6 @@
 a function that queries the reddit api and prints
 the first 10 hot posts for a given subreddit"""
 
-import json
 import requests
 
 
