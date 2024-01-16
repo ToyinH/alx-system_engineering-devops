@@ -25,6 +25,9 @@ def number_of_subscribers(subreddit):
 
     response = requests.get(endpoint, headers=headers)
 
+    if response.status_code != 200:
+        return 0
+
     if response.status_code == 200:
 
         try:
