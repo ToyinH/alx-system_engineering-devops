@@ -43,6 +43,7 @@ def count_words(subreddit, word_list, after=None, word_counts=None):
     if after is None:  # Only print results after processing the last page
         print_results(word_counts)
 
+
 def print_results(word_counts):
     # Sort the word counts in descending order by count and then alphabetically
     sorted_counts = sorted(word_counts.items(), key=lambda x: (-x[1], x[0]))
