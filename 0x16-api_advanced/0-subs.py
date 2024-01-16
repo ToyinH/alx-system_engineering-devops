@@ -35,6 +35,6 @@ def number_of_subscribers(subreddit):
 
         except requests.exceptions.RequestException as e:
             return 0
-        
+
     else:
         return 0
