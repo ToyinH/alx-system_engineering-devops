@@ -26,6 +26,8 @@ def number_of_subscribers(subreddit):
     response = requests.get(endpoint, headers=headers)
 
     if response.status_code == 200:
+        if 'error' in response.json():
+            return 0
         subreddit_data = response.json()['data']
         subscribers_count = subreddit_data['subscribers']
         return subscribers_count
