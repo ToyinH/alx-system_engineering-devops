@@ -19,17 +19,22 @@ def number_of_subscribers(subreddit):
     endpoint = f"https://www.reddit.com/r/{subreddit}/about.json"
 
     # set a custom user-agent to avoid too many request error
-    # headers = {
-    #     'User-Agent': 'simple_app (by /u/TechieDermMD)'
-    #     }
+    headers = {
+        'User-Agent': 'simple_app (by /u/TechieDermMD)'
+        }
 
-    response = requests.get(endpoint)
+    response = requests.get(endpoint, headers=headers)
 
     if response.status_code == 200:
         if 'error' in response.json():
             return 0
-        subreddit_data = response.json()['data']
-        subscribers_count = subreddit_data['subscribers']
-        return subscribers_count
+        try:
+            subreddit_data = response.json()['data']
+            subscribers_count = subreddit_data['subscribers']
+            return subscribers_count
+
+        except requests.exceptions.RequestException as e:
+            return 0
+        
     else:
         return 0
